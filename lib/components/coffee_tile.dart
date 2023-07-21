@@ -1,3 +1,4 @@
+import 'package:coffee_cofi/const.dart';
 import 'package:flutter/material.dart';
 
 import '../models/coffee.dart';
@@ -28,7 +29,13 @@ class CoffeeTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: ListTile(
-        title: Text(coffee.name),
+        title: Padding(
+          padding: const EdgeInsets.only(bottom: 6),
+          child: Text(
+            coffee.name,
+            style: const TextStyle(fontWeight: FontWeight.w600),
+          ),
+        ),
         subtitle: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -38,7 +45,7 @@ class CoffeeTile extends StatelessWidget {
         ),
         leading: Image.asset(coffee.imagePath),
         trailing: IconButton(
-          icon: Icon(icon),
+          icon: Icon(icon, color: primaryColor),
           onPressed: onPressed,
         ),
       ),

@@ -22,7 +22,7 @@ class LandingPage extends StatelessWidget {
               width: double.infinity,
             ),
             Text(
-              "Brew Day",
+              "Coffee Cofi",
               style: const TextStyle().copyWith(
                   color: primaryColor,
                   fontSize: 22,

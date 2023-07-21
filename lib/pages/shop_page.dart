@@ -21,12 +21,13 @@ class _ShopPageState extends State<ShopPage> {
     return Consumer<CoffeeShop>(
       builder: (context, coffee, child) => SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(26),
+          padding: const EdgeInsets.symmetric(horizontal: 26),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "How would you like your Coffee?",
-                style: TextStyle(fontSize: 22),
+                "How do you like your Coffee?",
+                style: TextStyle(fontSize: 20),
               ),
               const SizedBox(
                 height: 20,

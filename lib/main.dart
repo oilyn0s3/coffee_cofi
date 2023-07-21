@@ -1,5 +1,4 @@
 import 'package:coffee_cofi/models/coffee_shop.dart';
-import 'package:coffee_cofi/pages/home_page.dart';
 import 'package:coffee_cofi/pages/landing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,10 +18,12 @@ class MyApp extends StatelessWidget {
       create: (context) => CoffeeShop(),
       builder: (context, child) {
         return MaterialApp(
+          title: "Coffee Cofi",
           theme: ThemeData.light().copyWith(
             textTheme: GoogleFonts.poppinsTextTheme(),
           ),
           debugShowCheckedModeBanner: false,
+          // routes: ,
           home: const LandingPage(),
         );
       },
