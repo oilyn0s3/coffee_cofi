@@ -14,6 +14,38 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
+  void emptyCart() {
+    Provider.of<CoffeeShop>(context, listen: false).checkOut();
+    // Navigator.pop(context);
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            backgroundColor: backgroundColor,
+            // contentPadding: const EdgeInsets.only(top: 10),
+            icon: Icon(
+              Icons.check_circle_rounded,
+              color: primaryColor,
+              size: 36,
+            ),
+            title: Text(
+              "Payment was successful!",
+              style: TextStyle(
+                  fontSize: 18,
+                  color: secondaryTextColor,
+                  fontWeight: FontWeight.w600),
+            ),
+            content: Text(
+              "Your order is confirmed.",
+              style: TextStyle(color: secondaryTextColor),
+              textAlign: TextAlign.center,
+            ),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<CoffeeShop>(
@@ -41,7 +73,13 @@ class _CartPageState extends State<CartPage> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                 ),
-                onPressed: coffee.userCart.isEmpty ? null : () {},
+                onPressed: coffee.userCart.isEmpty
+                    ? null
+                    : () {
+                        setState(() {
+                          emptyCart();
+                        });
+                      },
                 child: Text(
                   "Proceed to Checkout",
                   style: const TextStyle().copyWith(fontSize: 16),

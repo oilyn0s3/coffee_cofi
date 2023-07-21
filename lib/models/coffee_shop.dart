@@ -45,5 +45,10 @@ class CoffeeShop extends ChangeNotifier {
     notifyListeners();
   }
 
-  // lazy check
+  // lazy checkout method
+
+  void checkOut() {
+    _userCart = [];
+    // notifyListeners();
+  }
 }
