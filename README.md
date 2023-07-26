@@ -1,6 +1,8 @@
 # coffee_cofi
 
-A new Flutter project.
+A coffee shop UI with simple and elegant design. 
+
+![Coffee Cofi](assets/coffee-ui.jpg)
 
 ## Getting Started
 
